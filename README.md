@@ -1,0 +1,3 @@
+# eZ Platform Requirements and Specifications Repository
+
+Stay tuned...
