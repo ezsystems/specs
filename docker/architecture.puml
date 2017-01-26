@@ -1,0 +1,59 @@
+@startuml
+
+title "Development Mode - Draft"
+
+cloud "Exposed Ports" {
+    () XX080 as SymfonyDevModePort
+    () XX081 as SymfonyProdModePort
+    () XX082 as SymfonyProdModeVarnishPort
+
+    () XX083 as MemcacheAdminPort
+    () XX306 as DatabaseEnginePort
+    () XX180 as MailcatcherPort
+}
+
+node "nginx" {
+    [PROD]
+    [DEV]
+    }
+
+node "engine" {
+    [PHP-FPM] as PhpFPM
+    [PHP-CLI] as PhpCli
+}
+
+node "db" {
+    database "ezplatform" as StandardDB
+}
+
+node "memcache" {
+}
+
+node "varnish" {
+}
+
+node "memcacheadmin" {
+}
+
+node "mailcatcher" {
+}
+
+MemcacheAdminPort -> memcacheadmin: Web Interface
+DatabaseEnginePort ---> db: TCP forward
+MailcatcherPort -> mailcatcher: Web Interface
+
+SymfonyDevModePort --> DEV: Web
+SymfonyProdModePort --> PROD: Web
+SymfonyProdModeVarnishPort --> varnish: Web
+varnish --> PROD
+
+DEV --> PhpFPM
+PROD --> PhpFPM
+
+engine -up--> db
+engine --> memcache
+engine --> mailcatcher
+
+memcacheadmin --> memcache
+
+@enduml
