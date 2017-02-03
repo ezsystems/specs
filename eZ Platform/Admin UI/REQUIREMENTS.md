@@ -21,18 +21,17 @@ Prototype *must*:
 - Demonstrate use of a non-YUI JavaScript enhancement within Admin UI
 - Demonstrate PHP API usage in Symfony3
 - Demonstrate REST API usage in JavaScript enhancement
-- Demonstrate re-use of an existing YUI component within
-- 
+- Demonstrate re-use of an existing YUI component within new solution
 
 # Preferred
 Prototype _should_:
--
--
+- Use the Universal Discovery Widget as the test subject to Demonstrate re-use of existing YUI component within new solution
+- ...
 
 # Bonus
 Prototype may:
 - Demonstrate encapsulation of existing YUI elements, as well as others, in webcomponents
--
+- ...
 
 # Exclusions
 Prototype *must not*:
