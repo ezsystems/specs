@@ -22,10 +22,11 @@ Prototype *must*:
 - Demonstrate PHP API usage in Symfony3
 - Demonstrate REST API usage in JavaScript enhancement
 - Demonstrate re-use of an existing YUI component within
+- 
 
 # Preferred
 Prototype _should_:
-- 
+-
 -
 
 # Bonus
