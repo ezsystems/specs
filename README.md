@@ -6,9 +6,9 @@ Welcome to our new Requirements and Specifications (specs, for short) repository
 Do you have some ideas you'd like to contribute to a spec? It's easy! Simply fork this repository to your own GitHub account, checkout the branch you want to work with, then make your own branch (with a useful and informative name) from that. Make any changes or additions you'd like to propose, add, and commit. Push to your fork, then send a Pull Request back here to the branch you're targeting where we can discuss things together.
 
 ### Target the Right Version!
-The master branch will always represent eZ's current recommended product. Right now, that's eZ Platform v1.7.0 LTS. If you submit a Pull Request to master, you're asking for the requirements and specifications to be updated for v1.7.0 (probably not the one you meant).
+The master branch will always represent eZ's current recommended product. Right now, that's eZ Platform v1.7 LTS. If you submit a Pull Request to master, you're asking for the requirements and specifications to be updated for v1.7 (probably not the one you meant, unless your Pull Request is just fixing a typo for that version).
 
-Start by checking out the branch representing the version you _do_ want to work with, and send your Pull Request back to that branch so it goes into the right place. For example, if you want to propose edits to the requirements and specifications for v1.9.0, you would make your branch based on this repository's v1.9.0 branch: https://github.com/ezsystems/specs/tree/v1.9.0 and send your PRs there.
+Start by checking out the branch representing the version you _do_ want to work with, and send your Pull Request back to that branch so it goes into the right place. For example, if you want to propose edits to the requirements and specifications for v1.9, you would make your branch based on this repository's v1.9 branch: https://github.com/ezsystems/specs/tree/v1.9 and send your PRs there.
 
 ### Editing
 
