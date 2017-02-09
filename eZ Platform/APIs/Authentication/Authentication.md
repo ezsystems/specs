@@ -17,6 +17,11 @@ Underlying goals are:
     * Should support OAuth2 bearer tokens, but should be pluggable to support others like JWT (JSON Web Token)
 * Adding native support for OAuth2 bearer tokens via the REST API by default
 
+## Relevant reading
+
+For inspiration on other frameworks implementing similar you can take a look at:
+http://passportjs.org/
+
 # Firm
 The prototype *must*:
 * Provide a pluggable system for remote, and internal, user authentication strategies
