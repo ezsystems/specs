@@ -10,7 +10,6 @@ Underlying goals are:
 * Simplify the creation of third party authentication strategies supporting the likes of:
     * Facebook
     * Google
-    * LinkedIn
     * LDAP
 * Simplify how to create a new user account in eZ via the API regardless of the authentication strategy being used
 * Providing a plugin based persistence with sessions and tokens
@@ -21,6 +20,44 @@ Underlying goals are:
 
 For inspiration on other frameworks implementing similar you can take a look at:
 http://passportjs.org/
+
+# Notes on API Interface
+
+~~~~
+class FacebookAuthenticationStrategy extends AuthenticationStrategy
+{
+    function authenticate()
+    {
+        // Fetch information about the current user from Facebook
+        $facebookToken = $request->request->get('fbtoken');
+
+        $fields = [
+            'email', 'birthday', 'first_name', 'last_name', 'middle_name', 'picture{url}', 'gender', 'hometown',
+        ];
+        $contentJson = @file_get_contents(
+            "https://graph.facebook.com/v2.8/me?access_token={$facebookToken}&fields=".implode(',', $fields)
+        );
+
+        $userJson = json_decode($contentJson);
+
+        // Store the user JSON internally
+    }
+
+    function serialize()
+    {   
+        // Serialize the user
+        // Store content object
+        // Perhaps store and sync with other repos also
+
+    }
+
+    function tokenize()
+    {   
+            // Optionally define the security strategy (basic, OAuth, JWT...
+    }
+}
+~~~~
+
 
 # Firm
 The prototype *must*:
